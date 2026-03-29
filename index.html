@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Micah Bergen Website!</title>
+  <meta name="description" content="A site dedicated to the incredible and fascinating heritage of Micah Bergen of Beaumont, Alberta.">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      margin: 0 0 30px;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    .video-wrap {
+      max-width: 960px;
+      margin: 0 auto 30px;
+      aspect-ratio: 16 / 9;
+    }
+
+    #player {
+      width: 100%;
+      height: 100%;
+      min-height: 270px;
+    }
+
+    .curator {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>The Micah Bergen Website!</h1>
+    <p class="subtitle">A site dedicated to the incredible and fascinating heritage of Micah Bergen of Beaumont, Alberta</p>
+
+    <div class="video-wrap">
+      <div id="player"></div>
+    </div>
+
+    <div class="curator">A message from the curator</div>
+  </div>
+
+  <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: 'D97Q0B-SGb8',
+        playerVars: {
+          autoplay: 1,
+          controls: 1,
+          playsinline: 1
+        },
+        events: {
+          onReady: onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.mute();
+      event.target.playVideo();
+    }
+  </script>
+</body>
+</html>
