@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>The Micah Bergen Website!</title>
-  <meta name="description" content="The website for Micah Bergen from Alta.  Are you him?  This has been waiting for you.">">
+  <meta name="description" content="The website for Micah Bergen from Alberta. Are you him? This has been waiting for you.">
+
+  <meta property="og:title" content="The Micah Bergen Website!">
+  <meta property="og:description" content="The website for Micah Bergen from Alberta. Are you him? This has been waiting for you.">
+  <meta property="og:image" content="https://micahbergen.ca/mb.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://micahbergen.ca/">
+  <link rel="icon" href="/mb.jpg" type="image/jpeg">
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "46bd01c62c7f4f9686b6120c3d1ec032"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+
   <style>
     html, body {
       margin: 0;
@@ -55,31 +72,46 @@
       font-size: 1.5rem;
       font-weight: bold;
     }
+
+    .preview-image {
+      max-width: 320px;
+      width: 100%;
+      height: auto;
+      margin: 20px auto 0;
+      display: block;
+    }
   </style>
 </head>
+
 <body>
   <div class="page">
     <h1>The Micah Bergen Website!</h1>
-    <p class="subtitle">A site dedicated to the incredible and fascinating heritage of Micah Bergen of Beaumont, Alberta</p>
+
+    <p class="subtitle">
+      A site dedicated to the incredible and fascinating heritage of Micah Bergen of Beaumont, Alberta
+    </p>
 
     <div class="video-wrap">
       <div id="player"></div>
     </div>
 
     <div class="curator">A message from the curator</div>
+
+    <img src="/mb.jpg" alt="Micah Bergen website preview image" class="preview-image">
   </div>
 
   <script>
-    var tag = document.createElement('script');
+    var tag = document.createElement("script");
     tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
+
+    var firstScriptTag = document.getElementsByTagName("script")[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     var player;
 
     function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        videoId: 'D97Q0B-SGb8',
+      player = new YT.Player("player", {
+        videoId: "D97Q0B-SGb8",
         playerVars: {
           autoplay: 1,
           controls: 1,
